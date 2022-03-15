@@ -1,0 +1,12 @@
+{
+  "title": "A Playground",
+  "description": "Play with Kubernetes",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node-ubuntu20.04"
+  }
+}
