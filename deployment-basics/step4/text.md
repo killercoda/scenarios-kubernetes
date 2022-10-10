@@ -13,5 +13,6 @@ Change the image `my-first-deployment` runs from `nginx:alpine` to `httpd:alpine
 k set image deployment my-first-deployment nginx=httpd:alpine
 
 k get deployment my-first-deployment
-```
+```{{exec}}
+
 </details>
