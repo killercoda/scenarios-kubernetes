@@ -1,4 +1,4 @@
-Now that we've create a PersistentVolume and a PersistentVolumeClaim, we're ready to use the volume!
+Now that we've created a PersistentVolume and a PersistentVolumeClaim, we're ready to use the volume!
 
 Create a pod named `pvc-user` in namespace `default` that mounts your PVC `my-claim` under `/mnt/share/my-pvc`. Use the image `nginx`.
 

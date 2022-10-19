@@ -1,22 +1,23 @@
 Now that our pod has a PersistentVolume any data it creates under /mnt/share/my-pvc will persist even if the container crashes or restarts.
 
 Go ahead and create a file named `coolfile` in the container `pvc-user` under `/mnt/share/my-pvc`.
->! k exec pvc-user -- touch /mnt/share/my-pvc/coolfile
+<details><summary>Solution</summary>
+```plain
+k exec pvc-user -- touch /mnt/share/my-pvc/coolfile
+```{{exec}}
+</details>
 
 Restart/Recreate the container
->! k get pod pvc-user -o yaml | kubectl replace -f - --force
+
+<details><summary>Solution</summary>
+```plain
+k get pod pvc-user -o yaml | kubectl replace -f - --force
+```{{exec}}
+</details>
 
 Look under `/mnt/share/my-pvc` is `coolfile` still there?
->! k exec pvc-user -- ls /mnt/share/my-pvc
-
-<br>
 <details><summary>Solution</summary>
-<br>
-
 ```plain
-k set image deployment my-first-deployment nginx=httpd:alpine
-
-k get deployment my-first-deployment
+k exec pvc-user -- ls /mnt/share/my-pvc
 ```{{exec}}
-
 </details>
