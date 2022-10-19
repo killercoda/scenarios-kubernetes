@@ -12,7 +12,9 @@ Create a PersistentVolume named `cool-volume` backed by a the hostPath `/tmp/my-
 <br>
 <details><summary>Solution</summary>
 <br>
-Kubectl doesn't have a create function for PersistentVolumes. To find a starting point, use something from the K8s docs such as [this PersistentVolume YAML](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolume) and adjust it for the requirements.
+Kubectl doesn't have a create function for PersistentVolumes. To find a starting point, use something from the K8s docs and adjust it for the requirements.
+
+One such example is here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolume
 
 ```plain
 kubectl apply -f - <<EOF

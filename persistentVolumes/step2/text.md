@@ -7,7 +7,9 @@ Make sure after creating the claim it shows up as `Bound`. If not, check to make
 <br>
 <details><summary>Solution</summary>
 <br>
-Again, it's useful to start with K8s doc examples when kubectl doesn't have a create option. Start with the one [here](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolumeclaim).
+Again, it's useful to start with K8s doc examples when kubectl doesn't have a create option. 
+
+A good starting point: https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolumeclaim
 
 ```plain
 kubectl apply -f - <<EOF
