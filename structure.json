@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "path": "playground" },
+    { "path": "pod-intro" },
+    { "path": "deployment-basics" },
+    { "path": "kubernetes-dashboard" }
+  ]
+}
