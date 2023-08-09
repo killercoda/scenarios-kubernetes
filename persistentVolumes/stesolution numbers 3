@@ -1,0 +1,21 @@
+controlplane $ kubectl apply -f - <<EOF
+> 
+> apiVersion: v1
+> kind: Pod
+> metadata:
+>   name: pvc-user
+> spec:
+>   volumes:
+>     - name: my-claim
+>       persistentVolumeClaim:
+>         claimName: my-claim
+>   containers:
+>     - name: c1
+>       image: nginx
+>       volumeMounts:
+>         - mountPath: "/mnt/share/my-pvc"
+>           name: my-claim
+> 
+> EOF
+pod/pvc-user created
+controlplane $ 
