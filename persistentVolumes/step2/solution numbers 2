@@ -1,0 +1,17 @@
+controlplane $ kubectl apply -f - <<EOF
+> 
+> apiVersion: v1
+> kind: PersistentVolumeClaim
+> metadata:
+>   name: my-claim #changed
+> spec:
+>   storageClassName: manual #important
+>   accessModes:
+>     - ReadWriteOnce
+>   resources:
+>     requests:
+>       storage: 100Mi #changed
+> 
+> EOF
+persistentvolumeclaim/my-claim created
+controlplane $ 
