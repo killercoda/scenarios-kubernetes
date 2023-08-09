@@ -1,0 +1,19 @@
+controlplane $ k exec pvc-user -- touch /mnt/share/my-pvc/coolfile
+error: unable to upgrade connection: container not found ("c1")
+controlplane $ k get pod pvc-user -o yaml | kubectl replace -f - --force
+pod "pvc-user" deleted
+pod/pvc-user replaced
+controlplane $ 
+controlplane $ sleep 5 # Wait for the pod to come back
+controlplane $ 
+controlplane $ k exec pvc-user -- ls /mnt/share/my-pvc
+coolfile
+controlplane $ ls
+filesystem  verify.sh
+controlplane $ nano verify.sh 
+controlplane $ cat verify.sh 
+#!/bin/bash
+
+kubectl exec pvc-user -- cat /mnt/share/my-pvc/coolfile
+controlplane $ ./verify.sh 
+controlplane $ 
