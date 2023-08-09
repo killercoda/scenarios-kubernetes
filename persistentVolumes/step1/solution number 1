@@ -1,0 +1,21 @@
+controlplane $ kubectl apply -f - <<EOF
+> 
+> apiVersion: v1
+> kind: PersistentVolume
+> metadata:
+>   name: cool-volume #changed
+>   namespace: default #added
+>   labels:
+>     type: local
+> spec:
+>   storageClassName: manual #make sure to include
+>   capacity:
+>     storage: 100Mi #changed
+>   accessModes:
+>     - ReadWriteOnce
+>   hostPath:
+>     path: "/tmp/my-cool-vol" #changed
+> 
+> EOF
+persistentvolume/cool-volume created
+controlplane $ 
