@@ -18,4 +18,5 @@ controlplane $ kubectl apply -f - <<EOF
 > 
 > EOF
 pod/pvc-user created
-controlplane $ 
+controlplane $ kubectl get pod pvc-user -o json | jq -r .spec.containers[0].volumeMounts | grep "/mnt/share/my-pvc"
+    "mountPath": "/mnt/share/my-pvc",
