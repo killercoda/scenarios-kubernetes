@@ -1,0 +1,3 @@
+controlplane $ k delete deployment my-first-deployment
+deployment.apps "my-first-deployment" deleted
+controlplane $ 
