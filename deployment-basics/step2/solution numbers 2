@@ -1,0 +1,6 @@
+controlplane $ k scale deployment/my-first-deployment --replicas=3
+deployment.apps/my-first-deployment scaled
+controlplane $ k get deployment my-first-deployment
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+my-first-deployment   1/3     1            1           2m50s
+controlplane $ 
