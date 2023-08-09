@@ -14,4 +14,16 @@ controlplane $ kubectl apply -f - <<EOF
 > 
 > EOF
 persistentvolumeclaim/my-claim created
+
+controlplane $ if ! kubectl get pvc my-claim; then exit 1; fi
+NAME       STATUS   VOLUME        CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+my-claim   Bound    cool-volume   100Mi      RWO            manual         9m58s
 controlplane $ 
+controlplane $ STATE=$(kubectl get pvc my-claim -o json | jq -r .status.phase)
+controlplane $ 
+controlplane $ if [[ "$STATE" -eq "Bound" ]]; then
+>     exit 0
+> else
+>     exit 1
+> fi
+exit
