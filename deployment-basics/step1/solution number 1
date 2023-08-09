@@ -1,0 +1,6 @@
+controlplane $ k create deployment my-first-deployment --image=nginx:alpine
+deployment.apps/my-first-deployment created
+controlplane $ k get deployment my-first-deployment
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+my-first-deployment   0/1     0            0           33s
+controlplane $ 
