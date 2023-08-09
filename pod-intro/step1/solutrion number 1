@@ -1,7 +1,5 @@
 controlplane $ k run my-pod --image=nginx:alpine
 pod/my-pod created
-controlplane $ k delete pod my-pod
-pod "my-pod" deleted
 controlplane $ nano verify.sh
 controlplane $ ls
 filesystem  verify.sh
