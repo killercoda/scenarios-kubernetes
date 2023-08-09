@@ -1,0 +1,5 @@
+controlplane $ k delete pod my-pod
+pod "my-pod" deleted
+controlplane $ ./verify.sh 
+Error from server (NotFound): pods "my-pod" not found
+controlplane $ 
