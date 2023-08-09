@@ -18,4 +18,41 @@ controlplane $ kubectl apply -f - <<EOF
 > 
 > EOF
 persistentvolume/cool-volume created
+
+controlplane $ ls
+filesystem  verify.sh
+controlplane $ ls -all
+total 48
+drwx------  6 root root 4096 Aug  9 06:25 .
+drwxr-xr-x 19 root root 4096 Aug  8 10:39 ..
+-rw-------  1 root root 1460 Aug  9 06:22 .bash_history
+-rw-r--r--  1 root root 3316 Aug  8 10:53 .bashrc
+drwxr-xr-x  3 root root 4096 Aug  8 10:51 .kube
+drwxr-xr-x  3 root root 4096 Aug  9 06:24 .local
+-rw-r--r--  1 root root  161 Dec  5  2019 .profile
+drwx------  2 root root 4096 Aug  8 10:35 .ssh
+drwxr-xr-x  4 root root 4096 Aug  9 05:53 .theia
+-rw-r--r--  1 root root  109 Aug  8 10:54 .vimrc
+-rw-r--r--  1 root root  165 Aug  8 10:50 .wget-hsts
+lrwxrwxrwx  1 root root    1 Aug  8 10:39 filesystem -> /
+-rw-r--r--  1 root root  440 Aug  9 06:25 verify.sh
+controlplane $ chmod +x verify.sh 
+controlplane $ ls -all
+total 48
+drwx------  6 root root 4096 Aug  9 06:25 .
+drwxr-xr-x 19 root root 4096 Aug  8 10:39 ..
+-rw-------  1 root root 1460 Aug  9 06:22 .bash_history
+-rw-r--r--  1 root root 3316 Aug  8 10:53 .bashrc
+drwxr-xr-x  3 root root 4096 Aug  8 10:51 .kube
+drwxr-xr-x  3 root root 4096 Aug  9 06:24 .local
+-rw-r--r--  1 root root  161 Dec  5  2019 .profile
+drwx------  2 root root 4096 Aug  8 10:35 .ssh
+drwxr-xr-x  4 root root 4096 Aug  9 05:53 .theia
+-rw-r--r--  1 root root  109 Aug  8 10:54 .vimrc
+-rw-r--r--  1 root root  165 Aug  8 10:50 .wget-hsts
+lrwxrwxrwx  1 root root    1 Aug  8 10:39 filesystem -> /
+-rwxr-xr-x  1 root root  440 Aug  9 06:25 verify.sh
+controlplane $ ./verify.sh 
+NAME          CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM              STORAGECLASS   REASON   AGE
+cool-volume   100Mi      RWO            Retain           Bound    default/my-claim   manual                  19m
 controlplane $ 
