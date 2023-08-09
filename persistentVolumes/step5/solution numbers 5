@@ -1,0 +1,11 @@
+controlplane $ k delete pod pvc-user
+pod "pvc-user" deleted
+controlplane $ k delete pvc my-claim
+persistentvolumeclaim "my-claim" deleted
+controlplane $ k delete pv cool-volume
+persistentvolume "cool-volume" deleted
+controlplane $ ./verify.sh 
+Error from server (NotFound): pods "pvc-user" not found
+Error from server (NotFound): persistentvolumeclaims "my-claim" not found
+Error from server (NotFound): persistentvolumes "cool-volume" not found
+controlplane $ 
