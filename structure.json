@@ -4,6 +4,6 @@
     { "path": "playground-k3s" },
     { "path": "pod-intro" },
     { "path": "deployment-basics" },
-    { "path": "kubernetes-dashboard" }
+    { "path": "headlamp" }
   ]
 }
