@@ -8,7 +8,7 @@ This is the repository for the scenarios available on [killercoda.com/kubernetes
 * StatefulSet
 * kubectl intro
 * kubectl contexts
-* ...
+* Kubernetes troubleshooting scenario
 
 ## Contribute
 

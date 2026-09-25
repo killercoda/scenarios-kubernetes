@@ -1,0 +1,1 @@
+- Troubleshoot application not accessible due to Secret misconfiguration and Service port mismatch
